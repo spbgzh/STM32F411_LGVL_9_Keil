@@ -78,7 +78,7 @@ int main(void)
 
   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
   HAL_Init();
-	Stm32_Clock_Init(144,15,2,5);
+
   /* USER CODE BEGIN Init */
 
   /* USER CODE END Init */
@@ -87,7 +87,7 @@ int main(void)
   // SystemClock_Config();
 
   /* USER CODE BEGIN SysInit */
-
+	Stm32F411_Clock_Init(144,15,2,5);
   /* USER CODE END SysInit */
 
   /* Initialize all configured peripherals */

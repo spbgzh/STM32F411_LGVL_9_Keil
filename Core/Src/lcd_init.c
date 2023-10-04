@@ -6,29 +6,13 @@ void LCD_GPIO_Init(void)
 {
   GPIO_InitTypeDef GPIO_InitStruct;
   __HAL_RCC_GPIOA_CLK_ENABLE();
-  __HAL_RCC_GPIOD_CLK_ENABLE();
-  __HAL_RCC_GPIOB_CLK_ENABLE();
 
-  GPIO_InitStruct.Pin = GPIO_PIN_1;
+  GPIO_InitStruct.Pin =  GPIO_PIN_1|GPIO_PIN_2|GPIO_PIN_3|GPIO_PIN_4;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_PULLUP;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
-  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_1, GPIO_PIN_SET);
-
-  GPIO_InitStruct.Pin = GPIO_PIN_2;
-  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
-  GPIO_InitStruct.Pull = GPIO_PULLUP;
-  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
-  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
-  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_2,GPIO_PIN_SET);
-
-  GPIO_InitStruct.Pin = GPIO_PIN_3|GPIO_PIN_4;
-  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
-  GPIO_InitStruct.Pull = GPIO_PULLUP;
-  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
-  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
-  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_3|GPIO_PIN_4, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_1|GPIO_PIN_2|GPIO_PIN_3|GPIO_PIN_4, GPIO_PIN_SET);
 }
 
 
@@ -65,24 +49,24 @@ void LCD_WR_REG(unsigned char data)
 
 void LCD_Address_Set(unsigned int x1,unsigned int y1,unsigned int x2,unsigned int y2)
 {
-		LCD_WR_REG(0x2a);//�е�ַ����
+		LCD_WR_REG(0x2a);
 		LCD_WR_DATA(x1);
 		LCD_WR_DATA(x2);
-		LCD_WR_REG(0x2b);//�е�ַ����
+		LCD_WR_REG(0x2b);
 		LCD_WR_DATA(y1);
 		LCD_WR_DATA(y2);
-		LCD_WR_REG(0x2c);//������д
+		LCD_WR_REG(0x2c);
 }
 void LCD_Init(void)
 {
-		LCD_GPIO_Init();//��ʼ��GPIO
+		LCD_GPIO_Init();
 		LCD_RES_Set();
 		HAL_Delay(10);	
-		LCD_RES_Clr();//��λ
+		LCD_RES_Clr();
 		HAL_Delay(10);
 		LCD_RES_Set();
 		HAL_Delay(120);
-		LCD_BLK_Set();//�򿪱���
+		LCD_BLK_Set();
 
 		LCD_WR_REG(0x11);     
 		HAL_Delay(120);                
@@ -94,7 +78,7 @@ void LCD_Init(void)
 		else LCD_WR_DATA8(0xA0);
 
 		LCD_WR_REG(0x3A);     
-		LCD_WR_DATA8( 0x05);   //16BIT
+		LCD_WR_DATA8( 0x05);   
 
 		LCD_WR_REG(0xB2);     
 		LCD_WR_DATA8( 0x05);   
@@ -123,7 +107,7 @@ void LCD_Init(void)
 		LCD_WR_DATA8( 0x20);   
 
 		LCD_WR_REG(0xC6);     
-		LCD_WR_DATA8( 0x0F);   //60HZ dot inversion
+		LCD_WR_DATA8( 0x0F);  
 
 		LCD_WR_REG(0xD0);     
 		LCD_WR_DATA8( 0xA7);   
