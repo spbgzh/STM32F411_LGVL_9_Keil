@@ -419,6 +419,11 @@
               <FileType>1</FileType>
               <FilePath>..\Core\Src\lcd_init.c</FilePath>
             </File>
+            <File>
+              <FileName>sys.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Core\Src\sys.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

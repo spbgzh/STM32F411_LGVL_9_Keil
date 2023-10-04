@@ -23,6 +23,7 @@
 /* USER CODE BEGIN Includes */
 #include "lv_port_disp_template.h"
 #include "lvgl.h"
+#include "sys.h"
 #include "demos/benchmark/lv_demo_benchmark.h"
 /* USER CODE END Includes */
 
@@ -77,13 +78,13 @@ int main(void)
 
   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
   HAL_Init();
-
+	Stm32_Clock_Init(144,15,2,5);
   /* USER CODE BEGIN Init */
 
   /* USER CODE END Init */
 
   /* Configure the system clock */
-  SystemClock_Config();
+  // SystemClock_Config();
 
   /* USER CODE BEGIN SysInit */
 
@@ -135,7 +136,7 @@ void SystemClock_Config(void)
   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSI;
   RCC_OscInitStruct.PLL.PLLM = 8;
-  RCC_OscInitStruct.PLL.PLLN = 100;
+  RCC_OscInitStruct.PLL.PLLN = 150;
   RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV2;
   RCC_OscInitStruct.PLL.PLLQ = 4;
   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)

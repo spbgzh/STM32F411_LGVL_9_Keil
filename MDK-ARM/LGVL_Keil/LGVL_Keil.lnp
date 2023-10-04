@@ -5,6 +5,7 @@
 "lgvl_keil\stm32f4xx_hal_msp.o"
 "lgvl_keil\lcd.o"
 "lgvl_keil\lcd_init.o"
+"lgvl_keil\sys.o"
 "lgvl_keil\stm32f4xx_hal_spi.o"
 "lgvl_keil\stm32f4xx_hal_rcc.o"
 "lgvl_keil\stm32f4xx_hal_rcc_ex.o"

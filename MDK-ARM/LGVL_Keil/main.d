@@ -281,6 +281,7 @@ lgvl_keil/main.o: ..\Core\Src\main.c RTE\LVGL\lv_conf_cmsis.h \
   C:\Users\zjjhg\AppData\Local\Arm\Packs\LVGL\lvgl\9.0.0-dev\src\lvgl_private.h \
   C:\Users\zjjhg\AppData\Local\Arm\Packs\LVGL\lvgl\9.0.0-dev\src\misc\..\core\lv_disp_private.h \
   C:\Users\zjjhg\AppData\Local\Arm\Packs\LVGL\lvgl\9.0.0-dev\src\misc\..\core\lv_indev_private.h \
+  ..\Core\Inc\sys.h \
   C:\Users\zjjhg\AppData\Local\Arm\Packs\LVGL\lvgl\9.0.0-dev\demos\benchmark\lv_demo_benchmark.h \
   C:\Users\zjjhg\AppData\Local\Arm\Packs\LVGL\lvgl\9.0.0-dev\demos\benchmark\..\lv_demos.h \
   C:\Users\zjjhg\AppData\Local\Arm\Packs\LVGL\lvgl\9.0.0-dev\demos\benchmark\..\..\lvgl.h \
