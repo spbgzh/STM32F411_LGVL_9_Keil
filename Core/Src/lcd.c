@@ -4,7 +4,7 @@
 #include <stdint.h>
 
 extern SPI_HandleTypeDef hspi1;
-/**********SLEEP IN***************/
+
 void EnterSleep(void)
 {
 	LCD_WR_REG(0x28);
@@ -12,7 +12,6 @@ void EnterSleep(void)
 	HAL_Delay(120);
 }
 
-/**********SLEEP OUT***************/
 void ExitSleep(void)
 {
 	LCD_WR_REG(0x11);

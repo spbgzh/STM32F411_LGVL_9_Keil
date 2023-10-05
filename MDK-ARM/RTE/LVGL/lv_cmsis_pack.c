@@ -110,4 +110,3 @@ _ARMABI time_t time(time_t * time)
 }
 #	endif
 #endif
-

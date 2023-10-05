@@ -16,7 +16,6 @@
 #define LCD_BLK_Set()  HAL_GPIO_WritePin(GPIOA,GPIO_PIN_4, GPIO_PIN_SET)
 
 
-
 void LCD_GPIO_Init(void);
 void LCD_Writ_Bus(unsigned char *data, unsigned int size);
 void LCD_WR_DATA8(unsigned char dat);
@@ -25,7 +24,3 @@ void LCD_WR_REG(unsigned char dat);
 void LCD_Address_Set(unsigned int x1,unsigned int y1,unsigned int x2,unsigned int y2);
 void LCD_Init(void);
 #endif
-
-
-
-

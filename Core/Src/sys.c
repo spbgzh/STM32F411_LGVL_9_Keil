@@ -34,5 +34,4 @@ void Stm32F411_Clock_Init(uint32_t plln,uint32_t pllm,uint32_t pllp,uint32_t pll
 	HAL_SYSTICK_Config(HAL_RCC_GetHCLKFreq()/1000);
 	HAL_SYSTICK_Config(HAL_RCC_GetHCLKFreq()/1000);
 	HAL_NVIC_SetPriority(SysTick_IRQn, 0, 0);
-	
 }

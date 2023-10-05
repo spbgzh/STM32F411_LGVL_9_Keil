@@ -159,10 +159,3 @@ void LCD_Init(void)
 
 		HAL_Delay(10);            
 } 
-
-
-
-
-
-
-
